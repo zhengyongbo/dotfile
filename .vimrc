@@ -19,7 +19,10 @@ Plugin 'goatslacker/mango.vim'
 
 Plugin 'matchit.zip'
 Plugin 'scrooloose/syntastic'
+
+" git plugin
 Plugin 'tpope/vim-fugitive'
+Plugin 'mhinz/vim-signify'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -58,8 +61,7 @@ Plugin 'scrooloose/nerdcommenter'
 " 退出编辑模式，切换输入法
  Plugin 'ybian/smartim'
 Plugin 'christoomey/vim-tmux-navigator'
-
-
+"Plugin 'sjl/gundo.vim'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
