@@ -1,6 +1,6 @@
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -56,7 +56,10 @@ Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdcommenter'
 
 " 退出编辑模式，切换输入法
-Plugin 'ybian/smartim'
+ Plugin 'ybian/smartim'
+Plugin 'christoomey/vim-tmux-navigator'
+
+
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
@@ -80,6 +83,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+"
 
 " Use the Solarized Dark theme
 set background=dark
@@ -222,6 +226,8 @@ noremap k gk
 
 
 " Plugin config
+
+
 " airline config
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='base16_monokai'
