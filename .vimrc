@@ -57,6 +57,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'Chiel92/vim-autoformat'
 
 " 退出编辑模式，切换输入法
  Plugin 'ybian/smartim'
