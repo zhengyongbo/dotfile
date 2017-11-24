@@ -60,12 +60,22 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'Chiel92/vim-autoformat'
 
 " 退出编辑模式，切换输入法
- Plugin 'ybian/smartim'
+" Plugin 'ybian/smartim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tmux-plugins/vim-tmux'
 "Plugin 'sjl/gundo.vim'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
+
+
+" swap pane plugin
+Plugin 'vim-scripts/bufkill.vim'
+
+
+" vim session plugin
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -127,6 +137,7 @@ endif
 nnoremap <Leader>r :source $MYVIMRC<CR>
 
 set guifont=Inconsolata:h16
+set guioptions=
 
 " Don’t create backups when editing files in certain directories
 set backupskip=/tmp/*,/private/tmp/*
@@ -227,6 +238,10 @@ map <Leader>= <C-w>=
 noremap j gj
 noremap k gk
 
+let g:windowswap_map_keys = 0 "prevent default bindings
+nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
+nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<CR>
+nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>"
 
 " Plugin config
 
@@ -305,12 +320,12 @@ endif
 set completeopt-=preview
 
 " smartim confign 'scrooloose/nerdcommenter'
-function! Multiple_cursors_before()
-  let g:smartim_disable = 1
-endfunction
-function! Multiple_cursors_after()
-  unlet g:smartim_disable
-endfunction
+" function! Multiple_cursors_before()
+" let g:smartim_disable = 1
+" endfunction
+" function! Multiple_cursors_after()
+"  unlet g:smartim_disable
+" endfunction
 
 " fzf config
 
@@ -346,3 +361,7 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
   let g:ag_working_path_mode="r"
 endif
+
+" vim session config
+let g:session_autosave = 'no'
+let g:session_menu = 0
