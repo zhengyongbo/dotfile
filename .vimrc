@@ -122,6 +122,7 @@ set ttyfast
 set gdefault
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
+set fileformats=unix,mac,dos
 " Change mapleader
 let mapleader=";"
 " Don’t add empty newlines at the end of files
@@ -199,7 +200,27 @@ if exists("&relativenumber")
   au BufReadPost * set relativenumber
 endif
 " Start scrolling three lines before the horizontal window border
-set scrolloff=3
+set scrolloff=8
+
+" command model key map
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" disable arrowkey in normal model
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+inoremap <C-b> <Left>
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+inoremap <C-f> <Right>
+
+
+
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
