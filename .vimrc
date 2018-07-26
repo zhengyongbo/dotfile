@@ -1,3 +1,7 @@
+if has('python3')
+  silent! python3 1
+endif
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -136,6 +140,7 @@ if exists("&undodir")
 endif
 
 nnoremap <Leader>r :source $MYVIMRC<CR>
+nnoremap <Leader>ev :tabedit $MYVIMRC<CR>
 
 set guifont=Inconsolata:h16
 set guioptions=
