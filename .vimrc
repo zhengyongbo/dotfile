@@ -68,6 +68,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tmux-plugins/vim-tmux'
 "Plugin 'sjl/gundo.vim'
+Plugin 'posva/vim-vue'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
@@ -224,9 +225,6 @@ inoremap <C-n> <Down>
 inoremap <C-p> <Up>
 inoremap <C-f> <Right>
 
-
-
-
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
   let save_cursor = getpos(".")
@@ -247,6 +245,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
   " Treat .md files as Markdown
   autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+  autocmd FileType vue syntax sync fromstart
 endif
 
 au BufRead,BufNewFile *.scss set filetype=scss.css
@@ -391,3 +390,5 @@ endif
 " vim session config
 let g:session_autosave = 'no'
 let g:session_menu = 0
+
+" vim tmux navigator config
