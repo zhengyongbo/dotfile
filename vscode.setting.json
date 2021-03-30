@@ -22,7 +22,7 @@
     "editor.fontLigatures": true,
     "workbench.activityBar.visible": false,
     "workbench.statusBar.visible": true,
-    "workbench.colorTheme": "Material Theme High Contrast",
+    "workbench.colorTheme": "Monokai",
     "view-in-browser.customBrowser": "chrome",
     "window.zoomLevel": 0,
     "material-icon-theme.showUpdateMessage": false,

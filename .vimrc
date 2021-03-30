@@ -43,7 +43,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'kshenoy/vim-signature'
 Plugin 'fholgado/minibufexpl.vim'
 
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
@@ -143,7 +143,7 @@ endif
 nnoremap <Leader>r :source $MYVIMRC<CR>
 nnoremap <Leader>ev :tabedit $MYVIMRC<CR>
 
-set guifont=Inconsolata:h16
+set guifont=Fira\ Code\ Retina:h19
 set guioptions=
 
 " Don’t create backups when editing files in certain directories
@@ -236,6 +236,11 @@ endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
+
+if $TERM_PROGRAM =~ "iTerm"
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+endif
 
 " Automatic commands
 if has("autocmd")
@@ -386,6 +391,10 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
   let g:ag_working_path_mode="r"
 endif
+
+nmap <C-p> :Files<CR>
+nmap <C-e> :Buffers<CR>
+let g:fzf_action = { 'ctrl-e': 'edit'  }
 
 " vim session config
 let g:session_autosave = 'no'
