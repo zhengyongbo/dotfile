@@ -54,7 +54,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions git)
+plugins=(zsh-autosuggestions git macos)
 
 # User configuration
 
@@ -97,9 +97,12 @@ alias hostconfig="sudo vim /etc/hosts"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cdagent="cd /Users/unclezheng/work/projects/agent_projects"
 alias cdgithub="cd /Users/unclezheng/work/projects/github_projects"
+alias cdprojects="cd /Users/unclezheng/work/projects"
 alias cdpractice="cd /Users/unclezheng/work/practices"
 alias cdmes="cd /Users/unclezheng/work/zoomlion/mes"
 alias mongod_start="mongod --config /usr/local/etc/mongod.conf"
+alias free='top -l 1 | head -n 10 | grep PhysMem'
+alias freeall='top -l 1 | head -n 10'
 # cd fzf
 #alias cdfzf="cd $(find * -type d | fzf)"
 
@@ -116,3 +119,4 @@ export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_mo
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # eval "$(rbenv init -)"export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+export PATH="/usr/local/sbin:$PATH"

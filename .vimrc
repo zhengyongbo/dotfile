@@ -30,6 +30,7 @@ Plugin 'mhinz/vim-signify'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'mattn/emmet-vim'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'nerdtree-execute'
@@ -282,7 +283,7 @@ let g:airline_theme='base16_monokai'
 
 " nerdtree config
 
-map <C-e> <plug>NERDTreeTabsToggle<CR>
+" nmap <leader>n <plug>NERDTreeTabsToggle<CR>
 map <leader>e :NERDTreeFind<CR>
 nmap <leader>nt :NERDTreeFind<CR>
 
@@ -376,7 +377,9 @@ let g:fzf_colors =
 
 nmap <Leader>t :Files<CR>
 nmap <Leader>b :Buffers<CR>
-
+nmap <C-p> :Files<CR>
+nmap <C-e> :Buffers<CR>
+let g:fzf_action = { 'ctrl-e': 'edit'  }
 
 
 " The Silver Searcher
@@ -391,10 +394,6 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
   let g:ag_working_path_mode="r"
 endif
-
-nmap <C-p> :Files<CR>
-nmap <C-e> :Buffers<CR>
-let g:fzf_action = { 'ctrl-e': 'edit'  }
 
 " vim session config
 let g:session_autosave = 'no'
